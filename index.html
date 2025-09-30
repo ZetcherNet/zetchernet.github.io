@@ -3,14 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>*{background-color:black;color:white;text-align:center;}</style>
-    <link rel="icon" type="image/png" href="./Zetcher.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/png" href="./favicon.ico">
     <title>ZetcherNet</title>
 </head>
 <body>
-    <h1>Under Construction</h1>
-    <img src="./Zetcher.png" alt="ZetcherNet" width="240" height="240"><br><br><br>
-    <a href="https://zetcher.net/bolternon"><h2>Link to my personal page.</h2></a>
+    <div class="container">
+        <div class="background">
+            <div class="bg-gradient"></div>
+            <img class="bg-zetcher" src="./!/zetcher.png">
+        </div>
+        <div class="content">
+            <header>
+                <aside class="emblem">
+                    <img src="./!/zetcher.png">
+                </aside>
+                <div class="banner">
+                    <hgroup>
+                        <img src="./!/network.png" alt="ZetcherNet">
+                    </hgroup>
+                    <nav>
+                        <button onclick="getArticle('index.html','')">/#/</button>
+                        <button onclick="getArticle('members.html','members')">Members/</button>
+                        <button onclick="window.location.href='https://discord.gg/xZkmzHv'">Discord/</button>
+                    </nav>
+                </div>
+            </header>
+            <main>
+                <article></article>
+            </main>
+        </div>
+        <div class="overlay">
+            <div class="scanlines-effect"></div>
+        </div>
+    </div>
 </body>
-
+<script src="./script.js"></script>
 </html>

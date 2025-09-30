@@ -1,0 +1,161 @@
+:root {
+    --aspect-ratio: 4/3;
+    --bg-focus: 1rem;
+}
+@font-face {
+    font-family: "zetchernet";
+    src: url("./!/zetchernet.woff");
+}
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: left;
+    font-family: monospace;
+    scrollbar-color: #fff #000;
+    cursor: default;
+    user-select: none;
+}
+a {
+    cursor: pointer;
+}
+body {
+    background-color: #000;
+}
+.container {
+    margin: auto;
+    aspect-ratio: var(--aspect-ratio);
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+.background {
+    background-color: #004;
+    background-image: linear-gradient(#000 25%, #004, #008);
+    position: fixed;
+    aspect-ratio: var(--aspect-ratio);
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -999;
+}
+.bg-gradient {
+    background-color: black;
+    position: fixed;
+    opacity: 0;
+    aspect-ratio: var(--aspect-ratio);
+    height: 100vh;
+}
+@keyframes spin {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: -45deg;
+    }
+}
+.bg-zetcher {
+    position: relative;
+    top: -181.25px;
+    left: -362.5px;
+    opacity: .25;
+    filter: drop-shadow(0 0 var(--bg-focus) black) blur(var(--bg-focus));
+    animation: spin 10s linear infinite;
+}
+.overlay {
+    position: fixed;
+    aspect-ratio: var(--aspect-ratio);
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+.scanlines-effect {
+    background-image: url("./!/scanlines.png");
+    position: fixed;
+    aspect-ratio: var(--aspect-ratio);
+    top: 0;
+    height: 100vh;
+    opacity: .25;
+    z-index: 999;
+}
+header {
+    background-color: #0004;
+    display: flex;
+    height: 128px;
+}
+.emblem {
+    flex: 128px;
+    height: 128px;
+}
+.emblem > img {
+    width: 128px;
+    height: 128px;
+    animation: spin 1s linear infinite;
+}
+.banner {
+    flex: calc(100% - 128px);
+}
+hgroup {
+    height: 96px;
+}
+hgroup > img {
+    height: 100%;
+}
+nav {
+    overflow: auto;
+    height: 32px;
+    background-image: linear-gradient(#0044, #0084);
+}
+button {
+    height: 32px;
+    font-size: 16px;
+    font-family: "zetchernet";
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+main {
+    padding: 8px;
+}
+main * {
+    text-align: center;
+}
+@media screen and (max-height: 499px) {
+    :root {
+        --aspect-ratio: revert;
+    }
+    .scanlines-effect, .background {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+@media (max-aspect-ratio: 4/3.0001) {
+    :root {
+        --aspect-ratio: revert;
+    }
+    .scanlines-effect, .background {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+@media screen and (max-width: 665px) {
+    .emblem {
+        display: none;
+    }
+    .banner {
+        flex: 100%;
+    }
+    hgroup, nav {
+        text-align: center;
+    }
+}
+@media screen and (max-width: 538px) {
+    header, hgroup, nav {
+        height: revert;
+    }
+    hgroup > img {
+        width: 100%;
+        height: auto;
+    }
+}
